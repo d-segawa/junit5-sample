@@ -28,7 +28,7 @@ class AssertionJunit5Test {
 	@Test
 	@DisplayName("グループ化されたメッセージは、それぞれが独立して実行される")
 	void assertAll2() {
-		assertAll("message", () -> {
+		assertAll("messageTest", () -> {
 
 			String message = null;
 			assertNotNull(message);
@@ -44,12 +44,20 @@ class AssertionJunit5Test {
 	void assert3() {
 
 		assertThrows(RuntimeException.class, () -> {
-			throw new RuntimeException();
+			
+			this.throwException();
+
 			// テスト失敗
 //			throw new IOException();
 		});
 	}
 
+	void throwException() {
+		throw new RuntimeException();
+	}
+	
+	
+	
 	@Test
 	@DisplayName("Timeoutのテスト")
 	void assert4() {

@@ -13,12 +13,13 @@ class AssertJJunit5Test {
 	@Test
 	@DisplayName("AssertJ")
 	void test() {
-		String message = "Message";
+		String message = "Hello!!";
 
-		Assertions.assertThat(message).isEqualTo("Message");
+		Assertions.assertThat(message).isEqualTo("Hello!!");
 
-		Assertions.assertThat(message).startsWith("M").endsWith("e").isEqualToIgnoringCase("message");
+		Assertions.assertThat(message).startsWith("H").endsWith("!");
 
+		Assertions.assertThat(message).isEqualToIgnoringCase("hello!!");
 	}
 
 }
